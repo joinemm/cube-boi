@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class lavaScript : MonoBehaviour {
 
-    public GameObject deathHandler;
-
 	void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("Player")) {
-            other.GetComponent<playerMovement>().Die();
-            GameObject deathHandlerGO = Instantiate(deathHandler, other.transform.position, Quaternion.identity);
-            Destroy(deathHandlerGO, 1f);
+            FindObjectOfType<gameController>().Respawn("lava");
         }
 	}
+
+    private void OnParticleCollision(GameObject other) {
+        Destroy(other);
+    }
 }

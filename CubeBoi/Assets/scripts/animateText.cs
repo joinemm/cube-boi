@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class animateText : MonoBehaviour {
 
 	void FixedUpdate () {
-        this.GetComponent<Text>().color = Color.Lerp(Color.gray, Color.white, Mathf.PingPong(Time.time, 1));
+        Text text = this.GetComponent<Text>();
+        text.color = new Color(text.color.r, text.color.g, text.color.b, (Mathf.PingPong(Time.time * 2f, 1.0f)));
     }
 }

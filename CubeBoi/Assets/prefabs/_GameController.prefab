@@ -51,10 +51,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1da048f5c4770bb47a267af77fe4c6ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timesDied: 0
-  player: {fileID: 1119342642995294, guid: 829a89d521770204bb4498d8d61bb033, type: 2}
   timesDiedText: {fileID: 0}
   winScreen: {fileID: 0}
   winText: {fileID: 0}
   timer: {fileID: 0}
   CMCamera: {fileID: 0}
+  player: {fileID: 1119342642995294, guid: 829a89d521770204bb4498d8d61bb033, type: 2}
+  deathHandlerRetry: {fileID: 1239597522643380, guid: 7a70ab11021966d46a09507de3f6017f,
+    type: 2}
+  deathHandlerLava: {fileID: 1239597522643380, guid: d2eb95662dd3a744cba69934c2726634,
+    type: 2}
+  pauseMenuUI: {fileID: 0}
+  optionsUI: {fileID: 0}
+  pauseMenuItems: {fileID: 0}
+  musicMixer: {fileID: 243117066770537006, guid: 460fcf03f0fee1c4b9b9e5630f36ec0e,
+    type: 2}

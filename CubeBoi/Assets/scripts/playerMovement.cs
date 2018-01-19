@@ -86,11 +86,4 @@ public class playerMovement : MonoBehaviour {
         boosted = true;
         StartCoroutine(BoostCooldown());
     }
-
-    public void Die() {
-        //executed on death
-        gameController.Respawn();
-        Destroy(this.gameObject);
-
-    }
 }

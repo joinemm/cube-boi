@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212246000127874040}
   - component: {fileID: 61235772735702428}
   - component: {fileID: 114652780100655464}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: lava
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4792612349600666}
   - component: {fileID: 198856869729962520}
   - component: {fileID: 199441266486682880}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,8 +109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 366fc348a5b1aa942acb1f24ba5dc18d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathHandler: {fileID: 1239597522643380, guid: d2eb95662dd3a744cba69934c2726634,
-    type: 2}
 --- !u!198 &198856869729962520
 ParticleSystem:
   m_ObjectHideFlags: 1

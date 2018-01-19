@@ -6,17 +6,17 @@
 ; Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
 AppId={{0C1C8790-ABA0-4F9F-B10E-722F93BD8055}
-AppName=Cube Game
-AppVersion=0.0.1.2
+AppName=Cube Boi
+AppVersion=0.0.2
 ;AppVerName=Cube Game 0.0.1.2
 AppPublisher=Joonas Rautiola
 AppPublisherURL=http://www.example.com/
 AppSupportURL=http://www.example.com/
 AppUpdatesURL=http://www.example.com/
-DefaultDirName={pf}\Cube Game
+DefaultDirName={pf}\Cube Boi
 DisableProgramGroupPage=yes
-OutputDir=F:\My Documents\My Files\GitHub\CubeGame\Releases\compiler output
-OutputBaseFilename=Cube Game Setup
+OutputDir=F:\My Documents\My Files\GitHub\CubeBoi\Releases\compiler output
+OutputBaseFilename=Cube Boi Setup
 Compression=lzma
 SolidCompression=yes
 
@@ -27,14 +27,14 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "F:\My Documents\My Files\GitHub\CubeGame\Releases\alpha 0.0.1\alpha 0.0.1.2.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "F:\My Documents\My Files\GitHub\CubeGame\Releases\alpha 0.0.1\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "F:\My Documents\My Files\GitHub\CubeBoi\Releases\alpha 0.0.2\alpha 0.0.2.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "F:\My Documents\My Files\GitHub\CubeBoi\Releases\alpha 0.0.2\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
-Name: "{commonprograms}\Cube Game"; Filename: "{app}\alpha 0.0.1.2.exe"
-Name: "{commondesktop}\Cube Game"; Filename: "{app}\alpha 0.0.1.2.exe"; Tasks: desktopicon
+Name: "{commonprograms}\Cube Boi"; Filename: "{app}\alpha 0.0.2.exe"
+Name: "{commondesktop}\Cube Boi"; Filename: "{app}\alpha 0.0.2.exe"; Tasks: desktopicon
 
 [Run]
-Filename: "{app}\alpha 0.0.1.2.exe"; Description: "{cm:LaunchProgram,Cube Game}"; Flags: nowait postinstall skipifsilent
+Filename: "{app}\alpha 0.0.2.exe"; Description: "{cm:LaunchProgram,Cube Game}"; Flags: nowait postinstall skipifsilent
 
