@@ -16,8 +16,14 @@ public class playerMovement : MonoBehaviour {
     //gameobject references
     Rigidbody2D rb;
     public LayerMask whatIsGround;
+    public LayerMask wallJumpMask;
     public gameController gameController;
     public GameObject groundCheck;
+
+    public string hitRight;
+    public string hitLeft;
+
+    bool canJump = true;
 
     void Start () {
         //set references on spawn
@@ -32,8 +38,17 @@ public class playerMovement : MonoBehaviour {
         if (groundCheck != null) {
             isGrounded = groundCheck.GetComponent<BoxCollider2D>().IsTouchingLayers(whatIsGround);
         }
+        //walljump
+        RaycastHit2D hitWallRight = Physics2D.Raycast(this.transform.position,Vector2.right,0.5f,wallJumpMask);
+        if (hitWallRight == true) {
+            hitRight = hitWallRight.collider.gameObject.name;
+        }
+        RaycastHit2D hitWallLeft = Physics2D.Raycast(this.transform.position, Vector2.left, 0.5f, wallJumpMask);
+        if (hitWallLeft == true) {
+            hitLeft = hitWallLeft.collider.gameObject.name;
+        }
         //set falling velocity multiplier
-        if (rb.velocity.y < 1) {
+        if (rb.velocity.y < 1 && !hitWallLeft && !hitWallRight) {
             rb.gravityScale = fallMultiplier;
         } else {
             rb.gravityScale = 1f;
@@ -43,10 +58,19 @@ public class playerMovement : MonoBehaviour {
             Move(Input.GetAxisRaw("Horizontal"));
         }
         //jump
-        if (isGrounded && Input.GetKeyDown(KeyCode.Space)) {
+        if (isGrounded && Input.GetKeyDown(KeyCode.Space) && canJump) {
             isGrounded = false;
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            
+            StartCoroutine(JumpCooldown());
+        }
+        //walljump
+        if (hitWallRight && Input.GetKeyDown(KeyCode.Space) && canJump) {
+            rb.AddForce(new Vector2(-1,1) * jumpForce, ForceMode2D.Impulse);
+            StartCoroutine(JumpCooldown());
+        }
+        if (hitWallLeft && Input.GetKeyDown(KeyCode.Space) && canJump) {
+            rb.AddForce(new Vector2(1, 1) * jumpForce, ForceMode2D.Impulse);
+            StartCoroutine(JumpCooldown());
         }
         //fixrotation
         if (Input.GetKeyDown(KeyCode.Q)) {
@@ -61,6 +85,12 @@ public class playerMovement : MonoBehaviour {
     IEnumerator BoostCooldown() {
         yield return new WaitForSeconds(3f);
         boosted = false;
+    }
+
+    IEnumerator JumpCooldown() {
+        canJump = false;
+        yield return new WaitForSeconds(0.05f);
+        canJump = true;
     }
 
     void Move(float movementAmount) {

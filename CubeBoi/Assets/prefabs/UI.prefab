@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 223170634255965376}
   - component: {fileID: 114147912358548688}
   - component: {fileID: 114427627928630114}
+  - component: {fileID: 114682399346537562}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -174,7 +175,6 @@ GameObject:
   - component: {fileID: 224685868815469726}
   - component: {fileID: 222889538487419086}
   - component: {fileID: 114599205506725988}
-  - component: {fileID: 114773786707756402}
   m_Layer: 5
   m_Name: paused
   m_TagString: Untagged
@@ -552,7 +552,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114682399346537562}
         m_MethodName: ToggleSettings
         m_Mode: 1
         m_Arguments:
@@ -604,7 +604,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114682399346537562}
         m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
@@ -991,7 +991,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: quit
+  m_Text: menu
 --- !u!114 &114541473793991072
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1102,6 +1102,26 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 00:00
+--- !u!114 &114682399346537562
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1155745806107434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88e621ebe02818140bfcc578010e749c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timesDiedText: {fileID: 114435761375462422}
+  winScreen: {fileID: 1623347644554632}
+  winText: {fileID: 114366237105217236}
+  timer: {fileID: 114659930815715440}
+  pauseMenuUI: {fileID: 1652712607793982}
+  optionsUI: {fileID: 1402474771919354}
+  pauseMenuItems: {fileID: 1117723478633680}
+  musicMixer: {fileID: 243117066770537006, guid: 460fcf03f0fee1c4b9b9e5630f36ec0e,
+    type: 2}
 --- !u!114 &114726095835170396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1141,8 +1161,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: ExitGame
+      - m_Target: {fileID: 114682399346537562}
+        m_MethodName: GoToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1186,7 +1206,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: alpha build 0.0.1
+  m_Text: alpha build 0.0.3
 --- !u!114 &114734012981571576
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1233,7 +1253,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114682399346537562}
         m_MethodName: SetVolume
         m_Mode: 0
         m_Arguments:
@@ -1398,17 +1418,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114773786707756402
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1479879388217678}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b1a430e8ce6ab841955a6de3570791d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114953651092963352
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1448,7 +1457,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114682399346537562}
         m_MethodName: ToggleSettings
         m_Mode: 1
         m_Arguments:
@@ -2108,7 +2117,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.00000021887536, y: -45}
-  m_SizeDelta: {x: 58.6, y: 30}
+  m_SizeDelta: {x: 61.8, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224925877125835578
 RectTransform:
