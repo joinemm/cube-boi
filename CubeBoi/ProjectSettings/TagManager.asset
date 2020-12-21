@@ -23,7 +23,7 @@ TagManager:
   - tiles
   - objects
   - wallJumpTiles
-  - 
+  - glass
   - 
   - 
   - 
@@ -60,6 +60,12 @@ TagManager:
     locked: 0
   - name: mapObjects
     uniqueID: 3135669173
+    locked: 0
+  - name: particles
+    uniqueID: 822218677
+    locked: 0
+  - name: glass
+    uniqueID: 929328659
     locked: 0
   - name: UI
     uniqueID: 4010239931

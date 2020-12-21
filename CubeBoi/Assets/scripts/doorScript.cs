@@ -11,9 +11,9 @@ public class doorScript : MonoBehaviour {
     }
 
     public void DustEffect() {
-        foreach (Animator anim in this.GetComponentsInChildren<Animator>()) {
-            anim.SetTrigger("dust");
-            this.GetComponent<AudioSource>().Play();
+        foreach (Animator anim in GetComponentsInChildren<Animator>()) {
+                anim.SetTrigger("dust");
         }
+        this.GetComponent<AudioSource>().Play();
     }
 }
